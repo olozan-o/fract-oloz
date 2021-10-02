@@ -19,8 +19,8 @@
 # include <math.h>
 # include "./minilibx-linux/mlx.h"
 
-# define WIDTH		500
-# define HEIGHT		500
+# define WIDTH		700
+# define HEIGHT		700
 
 # if __APPLE__
 #  define KEY_LEFT 123
@@ -34,8 +34,8 @@
 # elif __linux__
 #  define KEY_LEFT 65361
 #  define KEY_RIGHT 65363
-#  define KEY_UP 65365
-#  define KEY_DOWN	65367
+#  define KEY_UP 65362
+#  define KEY_DOWN	65364
 #  define MAIN_PAD_ESC	65307
 #  define  MOUSE_UP   0X00000004
 #  define  MOUSE_DOWN 0X00000005
