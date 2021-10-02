@@ -8,36 +8,41 @@ RM		= rm -f
 
 CC		= gcc
 
-INCLS	= -I.
+MLX_PATH = minilibx-linux/
+MLX_LIB = ${MLX_PATH}/libmlx.a
 
-MLX_FLG		=	-LminilibX -lmlx -L/usr/include/../lib -lXext -lX11 -lm -lbsd
+MLX_FLAGS_DEBIAN = -lmlx -lXext -lX11 -lm
+MLX_FLAGS_OLOZ = -L/usr/X11/lib /usr/X11/lib/libmlx.a -lXext -lX11 -lm
+MLX_FLAGS_OSX = -g -I /usr/X11/include -L /usr/X11/lib -l mlx -framework OpenGL -framework AppKit
+MLX_DIR = ./mlx
+MLX_A = $(MLX_DIR)/libmlx.a $(MLX_DIR)/libmlx_Linux.a
 
 CFLAGS	= -Wall -Wextra -Werror
 
-.c.o:
-			${CC} -c $< -o ${<:.c=.o} -I${INCLS}
-			@echo "Compiled "$<" successfully!"
+SRCSO = $(SRCS:.c=.o)
 
-minilib:
-			cd minilibX ; ./configure ; cd ..
+$(NAME): ${SRCSO} mlx_compil
+	${CC} ${CFLAGS}  -I. -o ${NAME} ${SRCSO} -L ${MLX_PATH} -lmlx -lXext -lX11 -lm -lft
 
-${NAME}:	${OBJS} minilib
-			@make -C ./minilibx_opengl
-			@make -C ./minilibx_mms
-			@cp ./minilibx_opengl/libmlx.a libmlx.a
-			@cp ./minilibx_mms/libmlx.dylib libmlx.dylib
-			${CC} ${INCLS} ${MLX_FLG} ${CFLAGS} $(LIBMLX) -o ${NAME} ${OBJS} 
-		
+linux_compil: 
+	$(CC) -g -c $(CC_FLAGS) -I. $(SRCS)
+	$(CC) -g $(MLX_FLAGS_DEBIAN) $(SRCSO) $(MLX_A) -o $(NAME)
+
+xibao_compil:
+	$(CC) -c $(CC_FLAGS) -I. $(SRCS)
+	$(CC) $(MLX_FLAGS_XIBAO) $(SRCSO) $(MLX_A) -o $(NAME)
+
+mlx_compil:
+	make -C ${MLX_PATH}
+
 clean:
-			${RM} ${OBJS}
+			rm -f $(SRCSO)
 
 all:		${NAME}
-			${RM} ${OBJS}
+			rm -f $(SRCSO)
 
 fclean:		clean
 			${RM} ${NAME}
-			rm -rf *.dSYM
-			rm -rf *.vscode
 
 fmlxclean:	fclean
 			${RM} libmlx.a

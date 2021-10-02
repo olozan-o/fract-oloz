@@ -6,7 +6,7 @@
 /*   By: oscarlo <oscarlo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 14:15:00 by oscarlo           #+#    #+#             */
-/*   Updated: 2021/10/02 17:26:27 by oscarlo          ###   ########.fr       */
+/*   Updated: 2021/10/02 19:26:28 by oscarlo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <math.h>
-# include "mlx.h"
+# include "./minilibx-linux/mlx.h"
 
 # define WIDTH		500
 # define HEIGHT		500

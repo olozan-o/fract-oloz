@@ -6,7 +6,7 @@
 /*   By: oscarlo <oscarlo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 21:48:46 by oscarlo           #+#    #+#             */
-/*   Updated: 2021/10/02 17:26:27 by oscarlo          ###   ########.fr       */
+/*   Updated: 2021/10/02 19:09:54 by oscarlo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	put_it_on(t_fract *fractol)
 		}
 		y++;
 	}
-	mlx_put_img_to_window(fractol->mlx, fractol->window,
+	mlx_put_image_to_window(fractol->mlx, fractol->window,
 		fractol->image->image, 0, 0);
 }
 
