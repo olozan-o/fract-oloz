@@ -6,7 +6,7 @@
 /*   By: oscarlo <oscarlo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 14:15:00 by oscarlo           #+#    #+#             */
-/*   Updated: 2021/10/02 19:37:27 by oscarlo          ###   ########.fr       */
+/*   Updated: 2021/10/02 19:47:12 by oscarlo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,22 @@
 # define HEIGHT		500
 
 # if __APPLE__
-#  define LEFT_ARROW_KEY 123
-#  define RIGHT_ARROW_KEY  124
+#  define KEY_LEFT 123
+#  define KEY_RIGHT 124
+#  define KEY_UP 126
+#  define KEY_DOWN	125
 #  define ESCAPE_KEY 53
 #  define MOUSE_UP	4
 #  define MOUSE_DOWN	5
 # elif __linux__
-#  define LEFT_ARROW_KEY 65361
-#  define RIGHT_ARROW_KEY  65363
+#  define KEY_LEFT 65361
+#  define KEY_RIGHT 65363
+#  define KEY_UP 65365
+#  define KEY_DOWN	65367
 #  define ESCAPE_KEY 65307
 #  define  MOUSE_UP   0X00000004
 #  define  MOUSE_DOWN 0X00000005
 # endif
-
-
 
 # define KEY_UP			126
 # define KEY_DOWN			125
