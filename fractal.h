@@ -6,7 +6,7 @@
 /*   By: oscarlo <oscarlo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 14:15:00 by oscarlo           #+#    #+#             */
-/*   Updated: 2021/10/02 19:48:30 by oscarlo          ###   ########.fr       */
+/*   Updated: 2021/10/02 19:50:03 by oscarlo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@
 #  define ESCAPE_KEY 53
 #  define MOUSE_UP	4
 #  define MOUSE_DOWN	5
+#  define MAIN_PAD_ESC		53
 # elif __linux__
 #  define KEY_LEFT 65361
 #  define KEY_RIGHT 65363
 #  define KEY_UP 65365
 #  define KEY_DOWN	65367
-#  define ESCAPE_KEY 65307
+#  define MAIN_PAD_ESC	65307
 #  define  MOUSE_UP   0X00000004
 #  define  MOUSE_DOWN 0X00000005
 # endif
