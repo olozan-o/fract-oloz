@@ -6,7 +6,7 @@
 /*   By: oscarlo <oscarlo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 21:48:46 by oscarlo           #+#    #+#             */
-/*   Updated: 2021/10/02 19:09:54 by oscarlo          ###   ########.fr       */
+/*   Updated: 2021/10/02 19:54:57 by oscarlo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ t_fract	*start_the_dance(char *name, void *mlx)
 		fractol->formula = &do_mandelbrot;
 	entree_public(fractol);
 	mlx_hook(fractol->window, 2, 0, key_press, fractol);
-	mlx_hook(fractol->window, 17, 0, exit_program,
+	mlx_hook(fractol->window, 17, (1L << 17), exit_program,
 		"Thank you dear, hope you liked it.\n");
 	mlx_hook(fractol->window, 4, 0, zoom, fractol);
 	return (fractol);
