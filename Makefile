@@ -8,24 +8,25 @@ RM		= rm -f
 
 CC		= gcc
 
-INCLS	= -I. -Iminilibx_mms -Iminilibx_opengl
+INCLS	= -I.
 
-LIBMLX 	= libmlx.dylib \
-		libmlx.a
+MLX_FLG		=	-LminilibX -lmlx -L/usr/include/../lib -lXext -lX11 -lm -lbsd
 
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${INCLS}
+			${CC} -c $< -o ${<:.c=.o} -I${INCLS}
 			@echo "Compiled "$<" successfully!"
 
+minilib:
+			cd minilibX ; ./configure ; cd ..
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} minilib
 			@make -C ./minilibx_opengl
 			@make -C ./minilibx_mms
 			@cp ./minilibx_opengl/libmlx.a libmlx.a
 			@cp ./minilibx_mms/libmlx.dylib libmlx.dylib
-			${CC} ${INCLS} ${CFLAGS} $(LIBMLX) -o ${NAME} ${OBJS} 
+			${CC} ${INCLS} ${MLX_FLG} ${CFLAGS} $(LIBMLX) -o ${NAME} ${OBJS} 
 		
 clean:
 			${RM} ${OBJS}
@@ -35,6 +36,8 @@ all:		${NAME}
 
 fclean:		clean
 			${RM} ${NAME}
+			rm -rf *.dSYM
+			rm -rf *.vscode
 
 fmlxclean:	fclean
 			${RM} libmlx.a
