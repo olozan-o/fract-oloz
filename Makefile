@@ -22,7 +22,7 @@ CFLAGS	= -Wall -Wextra -Werror
 SRCSO = $(SRCS:.c=.o)
 
 $(NAME): ${SRCSO} mlx_compil
-	${CC} ${CFLAGS}  -I. -o ${NAME} ${SRCSO} -L ${MLX_PATH} -lmlx -lXext -lX11 -lm -lft
+	${CC} ${CFLAGS}  -I. -o ${NAME} ${SRCSO} -L ${MLX_PATH} -lmlx -lXext -lX11 -lm
 
 linux_compil: 
 	$(CC) -g -c $(CC_FLAGS) -I. $(SRCS)
