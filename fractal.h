@@ -6,7 +6,7 @@
 /*   By: oscarlo <oscarlo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 14:15:00 by oscarlo           #+#    #+#             */
-/*   Updated: 2021/10/02 19:47:12 by oscarlo          ###   ########.fr       */
+/*   Updated: 2021/10/02 19:48:30 by oscarlo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,6 @@
 #  define  MOUSE_UP   0X00000004
 #  define  MOUSE_DOWN 0X00000005
 # endif
-
-# define KEY_UP			126
-# define KEY_DOWN			125
-# define KEY_LEFT			123
-# define KEY_RIGHT		124
 
 # define MAIN_PAD_ESC		53
 
